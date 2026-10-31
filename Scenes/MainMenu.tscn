@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://c5jk21tundspx"]
+
+[ext_resource type="Script" uid="uid://f8metd8e6nxx" path="res://Scripts/main_menu.gd" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://dddr0gqsn0anc" path="res://Assets/MenuBG.png" id="1_tt5f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeq5k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_853f1"]
+font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeq5k"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.69803923)
+
+[node name="Main Menu" type="Control" unique_id=616944649]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_853f1")
+
+[node name="BG" type="TextureRect" parent="." unique_id=922442364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tt5f1")
+expand_mode = 1
+
+[node name="Main" type="Panel" parent="." unique_id=1673070869]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qeq5k")
+
+[node name="Menu Buttons" type="VBoxContainer" parent="Main" unique_id=356521929]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = 373.0
+offset_right = 150.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Play" type="Button" parent="Main/Menu Buttons" unique_id=649430869]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Settings" type="Button" parent="Main/Menu Buttons" unique_id=1948685675]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Main/Menu Buttons" unique_id=1825013461]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+
+[node name="Title Text" type="Label" parent="Main" unique_id=844783133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 208.0
+offset_top = 63.0
+offset_right = -207.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dead by the Clock"
+label_settings = SubResource("LabelSettings_853f1")
+horizontal_alignment = 1
+
+[node name="Settings" type="Panel" parent="." unique_id=90005170]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.246
+anchor_top = 0.047000002
+anchor_right = 0.754
+anchor_bottom = 0.95300007
+offset_left = 0.11999512
+offset_top = 0.15999985
+offset_right = -0.11999512
+offset_bottom = -0.16003418
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qeq5k")
+
+[node name="Back" type="Button" parent="Settings" unique_id=1324038584]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22200002
+anchor_top = 0.87100005
+anchor_right = 0.77800006
+anchor_bottom = 0.95900005
+offset_left = -0.3000183
+offset_top = 0.10797119
+offset_right = 0.29995728
+offset_bottom = -0.26800537
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 29
+text = "Back"
+
+[connection signal="pressed" from="Main/Menu Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/Menu Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main/Menu Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]

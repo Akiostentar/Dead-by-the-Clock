@@ -1,9 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
-@export var speed: float = 300.0
+@export var speed: float = 125
 
 @onready var bullet_spawn: Marker2D = $"Bullet spawn"
 @onready var gun_direction: Marker2D = $"Gun Direction"
+@onready var attack_cooldown: Timer = $"Attack Cooldown"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const BULLET = preload("uid://cg0gvc8pkicg3")
 
@@ -23,7 +26,10 @@ func get_player_input():
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
-		shoot()
+		if attack_cooldown.is_stopped():
+			attack_cooldown.start()
+			animation_player.play("Gun Recoil")
+			shoot()
 
 func shoot():
 	var bullet_instance = BULLET.instantiate()

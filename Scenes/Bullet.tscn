@@ -3,16 +3,26 @@
 [ext_resource type="Script" uid="uid://bya615ycxhvnf" path="res://Scripts/bullet.gd" id="1_14k46"]
 [ext_resource type="Texture2D" uid="uid://sn2ditq5n73" path="res://Assets/bullet.png" id="1_vlxeq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltp5q"]
-size = Vector2(8, 6)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxv0c"]
+radius = 3.0
+height = 8.666667
 
 [node name="Bullet" type="Area2D" unique_id=1274408088]
-scale = Vector2(3, 3)
+rotation = 1.5707964
+scale = Vector2(1.75, 1.75)
 script = ExtResource("1_14k46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640496283]
-shape = SubResource("RectangleShape2D_ltp5q")
+position = Vector2(1.4570462e-08, 0.33333334)
+shape = SubResource("CapsuleShape2D_vxv0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722352445]
 texture_filter = 1
+rotation = -1.5707964
 texture = ExtResource("1_vlxeq")
+
+[node name="KillTimer" type="Timer" parent="." unique_id=426889735]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

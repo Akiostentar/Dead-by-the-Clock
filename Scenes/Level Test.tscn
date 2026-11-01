@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cnre3so406841"]
+
+[ext_resource type="Script" uid="uid://c0bvfewhhrluk" path="res://Scripts/level_test.gd" id="1_b4dlk"]
+[ext_resource type="Texture2D" uid="uid://dddr0gqsn0anc" path="res://Assets/MenuBG.png" id="1_xcv5p"]
+[ext_resource type="Script" uid="uid://drr4kyvvfrwgc" path="res://Scripts/bullet_manager.gd" id="2_8dkr8"]
+[ext_resource type="PackedScene" uid="uid://dgvdp005a0sdc" path="res://Scenes/Player.tscn" id="2_c8v78"]
+
+[node name="Level" type="Node2D" unique_id=368449902]
+script = ExtResource("1_b4dlk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=736762708]
+position = Vector2(639, 359)
+texture = ExtResource("1_xcv5p")
+
+[node name="Player" parent="." unique_id=724068713 instance=ExtResource("2_c8v78")]
+position = Vector2(639, 359)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1363858798]
+
+[node name="BulletManager" type="Node2D" parent="." unique_id=1909188604]
+script = ExtResource("2_8dkr8")

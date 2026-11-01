@@ -11,6 +11,12 @@ font_size = 100
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeq5k"]
 bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.69803923)
 
+[sub_resource type="LabelSettings" id="LabelSettings_qeq5k"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_8saeu"]
+font_size = 32
+
 [node name="Main Menu" type="Control" unique_id=616944649]
 layout_mode = 3
 anchors_preset = 15
@@ -31,6 +37,7 @@ texture = ExtResource("1_tt5f1")
 expand_mode = 1
 
 [node name="Main" type="Panel" parent="." unique_id=1673070869]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,7 +95,6 @@ label_settings = SubResource("LabelSettings_853f1")
 horizontal_alignment = 1
 
 [node name="Settings" type="Panel" parent="." unique_id=90005170]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.246
@@ -102,6 +108,57 @@ offset_bottom = -0.16003418
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qeq5k")
+
+[node name="Label" type="Label" parent="Settings" unique_id=224359193]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.351
+anchor_top = 0.052
+anchor_right = 0.64900005
+anchor_bottom = 0.133
+offset_left = -0.15000916
+offset_top = -15.903999
+offset_right = 0.14996338
+offset_bottom = 0.28399658
+grow_horizontal = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_qeq5k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings" unique_id=2144565290]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_top = 0.141
+anchor_right = 0.96000004
+anchor_bottom = 0.859
+offset_top = 0.06800079
+offset_bottom = -0.067993164
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicLabel" type="Label" parent="Settings/VBoxContainer" unique_id=1893641025]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_8saeu")
+horizontal_alignment = 1
+
+[node name="Music" type="HSlider" parent="Settings/VBoxContainer" unique_id=277884182]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="Settings/VBoxContainer" unique_id=241135729]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_8saeu")
+horizontal_alignment = 1
+
+[node name="SFX" type="HSlider" parent="Settings/VBoxContainer" unique_id=1098629828]
+layout_mode = 2
+
+[node name="FullscreenToggle" type="CheckButton" parent="Settings/VBoxContainer" unique_id=878012178]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+button_pressed = true
+text = "Fullscreen"
 
 [node name="Back" type="Button" parent="Settings" unique_id=1324038584]
 layout_mode = 1
@@ -122,4 +179,5 @@ text = "Back"
 [connection signal="pressed" from="Main/Menu Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/Menu Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Menu Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="Settings/VBoxContainer/FullscreenToggle" to="." method="_on_fullscreen_toggle_toggled"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]

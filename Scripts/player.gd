@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed: float = 125
+@export var max_bullets: int = 45
 
 @onready var bullet_spawn: Marker2D = $"Bullet spawn"
 @onready var gun_direction: Marker2D = $"Gun Direction"
@@ -9,8 +10,15 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const BULLET = preload("uid://cg0gvc8pkicg3")
+var total_magazines
+var current_bullets
 
 signal player_shot(bullet, spawn_position, direction)
+
+func _ready() -> void:
+	current_bullets = max_bullets
+	total_magazines = current_bullets/15
+
 
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())

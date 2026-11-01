@@ -21,9 +21,9 @@ func _process(_delta: float) -> void:
 		global_position += velocity
 
 
-func set_direction(direction: Vector2):
-	self.direction = direction
-	rotation += direction.angle()
+func set_direction(p_direction: Vector2):
+	self.direction = p_direction
+	rotation += p_direction.angle()
 
 
 func _on_kill_timer_timeout() -> void:

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dgvdp005a0sdc"]
+[gd_scene format=3 uid="uid://01ryv24gp63a"]
 
 [ext_resource type="Script" uid="uid://coqfr23jvh11e" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://d3gy3x3ptjily" path="res://Assets/Player.png" id="2_kyqiw"]
@@ -74,5 +74,10 @@ position = Vector2(48, 0)
 wait_time = 0.25
 one_shot = true
 
+[node name="Reload" type="Timer" parent="." unique_id=1967510049]
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=492929407]
 libraries/ = SubResource("AnimationLibrary_dewec")
+
+[connection signal="timeout" from="Reload" to="." method="_on_reload_timeout"]

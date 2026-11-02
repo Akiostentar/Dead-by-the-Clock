@@ -1,4 +1,4 @@
-# DEATH BY THE CLOCK
+<img width="959" height="539" alt="screenshot3" src="https://github.com/user-attachments/assets/82851717-4099-464f-b402-ec8c4f93445e" /># DEATH BY THE CLOCK
 Play as a man who tries to survive off killing people. Made as a project for Terra 
 
 [GAME IS STILL A PROTOTYPE; MANY CHANGES AND POLISHES ARE NEEDED - IT'S GOT A LONG WAY TO GO!]
@@ -25,3 +25,8 @@ This project will allow me to improve my skills in coding a game, this time by m
     <td>Shoot</td>
   </tr>
 </table>
+
+### Screenshots
+![Death by the Bell Main Menu](screenshot1.png)
+![Death by the Bell Inside level](screenshot2.png)
+![Death by the Bell Inside level with an enemy](screenshot3.png)

@@ -9,7 +9,7 @@ height = 8.666667
 
 [node name="Bullet" type="Area2D" unique_id=1274408088]
 rotation = 1.5707964
-scale = Vector2(1.75, 1.75)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_14k46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640496283]

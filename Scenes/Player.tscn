@@ -74,5 +74,10 @@ position = Vector2(48, 0)
 wait_time = 0.25
 one_shot = true
 
+[node name="Reload" type="Timer" parent="." unique_id=1967510049]
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=492929407]
 libraries/ = SubResource("AnimationLibrary_dewec")
+
+[connection signal="timeout" from="Reload" to="." method="_on_reload_timeout"]

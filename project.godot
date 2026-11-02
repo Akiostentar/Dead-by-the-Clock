@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Dead by the Clock"
+run/main_scene="uid://c5jk21tundspx"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

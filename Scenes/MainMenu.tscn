@@ -90,7 +90,7 @@ offset_right = -207.0
 offset_bottom = -520.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Dead by the Clock"
+text = "Death by the Clock"
 label_settings = SubResource("LabelSettings_853f1")
 horizontal_alignment = 1
 

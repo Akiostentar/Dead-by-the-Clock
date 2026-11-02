@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Dead by the Clock"
+run/main_scene="uid://c5jk21tundspx"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneLoader="*uid://bnl2gkf3vn3ba"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

@@ -1,5 +1,5 @@
 # DEATH BY THE CLOCK
-Play as a man who tries to survive off of killing people. Made as a project for Terra 
+Play as a man who tries to survive off killing people. Made as a project for Terra 
 
 [GAME IS STILL A PROTOTYPE; MANY CHANGES AND POLISHES ARE NEEDED - IT'S GOT A LONG WAY TO GO!]
 
